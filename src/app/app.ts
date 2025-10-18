@@ -22,6 +22,6 @@ import { FooterComponent } from './components/footer';
     FooterComponent,
   ],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']   // ⚡ corrected here
 })
 export class App {}
