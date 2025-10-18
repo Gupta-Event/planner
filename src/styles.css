@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-luxe-black text-white font-poppins;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair font-bold;
+  }
+}
+
+@layer components {
+  .section-divider {
+    @apply h-px bg-gradient-to-r from-transparent via-gold-500 to-transparent my-16;
+  }
+
+  .gold-text {
+    @apply text-gold-500;
+  }
+
+  .btn-gold {
+    @apply bg-gradient-to-r from-gold-500 to-gold-600 text-luxe-black font-semibold py-3 px-8 rounded-lg hover:from-gold-400 hover:to-gold-500 transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-gold-500/60 hover:scale-105;
+  }
+
+  .btn-gold-outline {
+    @apply border-2 border-gold-500 text-gold-500 font-semibold py-2 px-6 rounded-lg hover:bg-gradient-to-r hover:from-gold-500/20 hover:to-transparent hover:text-gold-400 transition-all duration-500 hover:shadow-lg hover:shadow-gold-500/40 hover:border-gold-400;
+  }
+
+  .card-gold {
+    @apply border border-gold-500 rounded-lg p-6 hover:shadow-lg hover:shadow-gold-500/50 transition-all duration-300 hover:border-gold-400 backdrop-blur-sm bg-black/30;
+  }
+
+  .card-gold-glow {
+    @apply border border-gold-500/50 rounded-lg p-6 transition-all duration-500 hover:border-gold-500 hover:shadow-lg hover:shadow-gold-500/40 hover:-translate-y-2 backdrop-blur-sm bg-gradient-to-br from-gold-500/5 to-transparent;
+  }
+
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 animate-pulse;
+  }
+
+  .gradient-text-animated {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 bg-[200%_auto] animate-shimmer;
+  }
+
+  .header-scroll {
+    @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
+  }
+
+.header-scroll.scrolled {
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0.98),
+    rgba(10, 10, 10, 0.95)
+  );
+  @apply backdrop-blur-xl shadow-2xl shadow-gold-500/20 border-b border-gold-500/20;
+}
+
+  .gold-glow {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/50;
+  }
+
+  .shimmer-effect {
+    @apply animate-shimmer bg-gradient-to-r from-transparent via-gold-500/20 to-transparent bg-[200%_auto];
+  }
+
+  .title-underline {
+    @apply inline-block relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-12 after:h-px after:bg-gradient-to-r after:from-gold-500 after:to-transparent;
+  }
+
+  .floating-animation {
+    @apply animate-float;
+  }
+
+  /* Glassmorphism effects */
+  .glass-effect {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl;
+  }
+
+  .glass-hover {
+    @apply glass-effect transition-all duration-500 hover:bg-white/10 hover:border-gold-500/30 hover:shadow-lg hover:shadow-gold-500/20;
+  }
+
+  /* Gradient section backgrounds */
+  .gradient-section {
+    @apply relative overflow-hidden;
+  }
+
+  .gradient-section::before {
+    @apply absolute inset-0 bg-gradient-to-b from-gold-500/10 via-transparent to-transparent pointer-events-none;
+  }
+
+  /* Modern heading styles */
+  .modern-heading {
+    @apply text-5xl md:text-6xl font-playfair font-bold bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 bg-clip-text text-transparent drop-shadow-lg;
+  }
+
+  /* Stagger animation */
+  .stagger-item {
+    @apply opacity-0 animate-fade-in-up;
+  }
+
+  .stagger-item:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .stagger-item:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .stagger-item:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  .stagger-item:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+  .stagger-item:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+
+  .stagger-item:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Particle/sparkle effect for hero */
+.particle {
+  @apply absolute rounded-full animate-sparkle;
+}
+
+/* Lightbox styles */
+.lightbox {
+  @apply fixed inset-0 bg-black/80 z-50 flex items-center justify-center backdrop-blur-sm;
+}
+
+.lightbox-content {
+  @apply relative max-w-4xl max-h-screen overflow-auto rounded-lg;
+}
+
+.lightbox-close {
+  @apply absolute top-4 right-4 text-white text-3xl cursor-pointer hover:text-gold-500 transition-colors;
+}
+
+/* Gold gradient text for headings */
+.gold-heading {
+  @apply text-gold-500 drop-shadow-lg;
+}
+
+/* Gold glow effect */
+.glow-gold {
+  @apply text-gold-500 drop-shadow-[0_0_10px_rgba(212,175,55,0.6)];
+}
+
+/* Enhanced hover glow for nav links */
+a.relative span {
+  @apply origin-left;
+}
+@layer utilities {
+  .bg-luxe-black-gradient {
+    @apply bg-gradient-to-r from-luxe-black/98 to-luxe-black/95;
+  }
+}
+/* Custom gradients using luxe-black colors with opacity */
+.bg-luxe-black-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0.98),
+    rgba(10, 10, 10, 0.95)
+  );
+}
